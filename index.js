@@ -3,10 +3,12 @@ const fetch = require("node-fetch");
 const { redirect } = require("statuses");
 let { destinations } = require("./db");
 const { generateUniqueId } = require("./services");
-server.use(cors());
+const cors = require('cors')
 
 const server = express();
 server.use(express.json());
+server.use(cors());
+
 // server.use(express.urlencoded())
 
 server.listen(process.env.PORT||3000,function(){
