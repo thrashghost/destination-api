@@ -1,3 +1,2 @@
-const destinations = [
-];
+const destinations = [];
 module.exports = { destinations };
