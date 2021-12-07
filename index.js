@@ -10,14 +10,15 @@ server.use(express.json());
 server.use(cors());
 // server.use(express.urlencoded())
 
-server.listen(process.env.PORT||3000,function(){
-  console.log("Server listening on PORT 3000")
+let PORT=process.env.PORT || 3000;
+server.listen(PORT,function(){
+  console.log(`Server listening on {PORT}`);
 });
 
 // POST => create destinations
 // data => {name^, location^, photo, description}
 server.post("/destinations", async (req, res) => {
-  const { name, location, photo, description } = req.body;
+  const { name, location, description } = req.body;
 
   // Make sure we have a name AND location
   if (
